@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="mvc">
+  <ClassDiagramComponents>
+    <Class name="Controlador" package="mvc" visibility="public" xPosition="884.0" yPosition="176.0">
+      <Fields>
+        <Field name="listapanes" type="ArrayList&lt;Pan&gt;" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="obtenerListaPanes" returnType="String" visibility="package"/>
+      </Methods>
+    </Class>
+    <Class name="ControladorHuevos" package="mvc" visibility="public" xPosition="67.0" yPosition="210.0">
+      <Fields>
+        <Field name="listahuevos" type="ArrayList&lt;Huevos&gt;" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="obtenerListaHuevos" returnType="String" visibility="package"/>
+      </Methods>
+    </Class>
+    <Class name="Huevos" package="mvc" visibility="public" xPosition="394.0" yPosition="410.0">
+      <Fields>
+        <Field name="tamanio" type="String" visibility="package"/>
+        <Field name="color_del_huevo" type="Color" visibility="package"/>
+        <Field name="precio" type="int" visibility="package"/>
+        <Field name="cantidad" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="tamanio"/>
+          <Argument type="Color" name="color_del_huevo"/>
+          <Argument type="int" name="precio"/>
+          <Argument type="int" name="cantidad"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Leche" package="mvc" visibility="public" xPosition="840.0" yPosition="30.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Pan" package="mvc" visibility="public" xPosition="912.0" yPosition="429.0">
+      <Fields>
+        <Field name="precio" type="int" visibility="package"/>
+        <Field name="tipo_de_pan" type="String" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="precio"/>
+          <Argument type="String" name="tipo_de_pan"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="devolverPrecio" returnType="String" visibility="package"/>
+      </Methods>
+    </Class>
+    <Class name="Vista" package="mvc" visibility="public" xPosition="326.0" yPosition="30.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="listahuevos" source="mvc.ControladorHuevos" target="mvc.Huevos" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Huevos&gt;"/>
+    <HasRelation name="listapanes" source="mvc.Controlador" target="mvc.Pan" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Pan&gt;"/>
+    <HasRelation name="huevoncontroller" source="mvc.Vista" target="mvc.ControladorHuevos" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

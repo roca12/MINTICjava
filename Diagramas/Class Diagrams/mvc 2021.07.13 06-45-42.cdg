@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="mvc">
+  <ClassDiagramComponents>
+    <Class name="Controlador" package="mvc" visibility="public" xPosition="254.0" yPosition="385.0">
+      <Fields>
+        <Field name="vectorpanes" type="Pan[]" visibility="package"/>
+        <Field name="listaleches" type="ArrayList&lt;Leche&gt;" visibility="package"/>
+        <Field name="listahuevos" type="ArrayList&lt;Huevos&gt;" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="mostrarTodosPanes" returnType="Pan[]" visibility="package"/>
+        <Method name="obtenerPrecio" returnType="int" visibility="package">
+          <Argument type="String" name="pan_a_buscar"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Huevos" package="mvc" visibility="public" xPosition="134.0" yPosition="122.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Leche" package="mvc" visibility="public" xPosition="435.0" yPosition="96.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Pan" package="mvc" visibility="public" xPosition="654.0" yPosition="293.0">
+      <Fields>
+        <Field name="precio" type="int" visibility="package"/>
+        <Field name="tipo_de_pan" type="String" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="precio"/>
+          <Argument type="String" name="tipo_de_pan"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="devolverPrecio" returnType="String" visibility="package"/>
+      </Methods>
+    </Class>
+    <Class name="Vista" package="mvc" visibility="public" xPosition="704.0" yPosition="96.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="listaleches" source="mvc.Controlador" target="mvc.Leche" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Leche&gt;"/>
+    <HasRelation name="listahuevos" source="mvc.Controlador" target="mvc.Huevos" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Huevos&gt;"/>
+    <UseRelation source="mvc.Controlador" target="mvc.Pan" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
