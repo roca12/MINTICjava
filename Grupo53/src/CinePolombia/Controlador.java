@@ -22,5 +22,13 @@ public class Controlador {
         }
         return resultado;
     }
+    
+//    void restarDisponibles (String  nombre){
+//        for (Pelicula pe : en_estreno) {
+//            if (pe.equals(nombre)){
+//                pe.sillas_restantes-3;
+//            }
+//        }
+//    }
 
 }
