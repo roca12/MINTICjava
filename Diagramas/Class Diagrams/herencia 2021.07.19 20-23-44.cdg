@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="herencia">
+  <ClassDiagramComponents>
+    <Class name="Abuelo" package="herencia" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="mascota" type="String" visibility="package"/>
+        <Field name="herencia_monetaria" type="long" visibility="package"/>
+        <Field name="vehiculo" type="String" visibility="package"/>
+        <Field name="accesorio" type="String" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="mascota"/>
+          <Argument type="long" name="herencia_monetaria"/>
+          <Argument type="String" name="vehiculo"/>
+          <Argument type="String" name="accesorio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="obtenerDatos" returnType="String" visibility="package"/>
+      </Methods>
+    </Class>
+    <Class name="Administrativo" package="herencia" visibility="public" xPosition="1659.0" yPosition="410.0">
+      <Fields>
+        <Field name="cargo" type="String" visibility="package"/>
+        <Field name="salario" type="long" visibility="package"/>
+        <Field name="nivel_de_escolaridad" type="String" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="cargo"/>
+          <Argument type="long" name="salario"/>
+          <Argument type="String" name="nivel_de_escolaridad"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="cargo"/>
+          <Argument type="long" name="salario"/>
+          <Argument type="String" name="nivel_de_escolaridad"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="rh"/>
+          <Argument type="long" name="cedula"/>
+          <Argument type="char" name="sexo"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Estudiante" package="herencia" visibility="public" xPosition="904.0" yPosition="367.0">
+      <Fields>
+        <Field name="semestre" type="int" visibility="package"/>
+        <Field name="cod_estudiante" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="semestre"/>
+          <Argument type="int" name="cod_estudiante"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="semestre"/>
+          <Argument type="int" name="cod_estudiante"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="rh"/>
+          <Argument type="long" name="cedula"/>
+          <Argument type="char" name="sexo"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Hijo" package="herencia" visibility="public" xPosition="20.0" yPosition="633.0">
+      <Fields>
+        <Field name="consola_de_juego" type="String" visibility="package"/>
+        <Field name="red_social" type="String" visibility="package"/>
+        <Field name="no_deduas" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="consola_de_juego"/>
+          <Argument type="String" name="red_social"/>
+          <Argument type="int" name="no_deduas"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="consola_de_juego"/>
+          <Argument type="String" name="red_social"/>
+          <Argument type="int" name="no_deduas"/>
+          <Argument type="String" name="vivienda"/>
+          <Argument type="String" name="celular"/>
+          <Argument type="String" name="gusto_de_equipo"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="consola_de_juego"/>
+          <Argument type="String" name="red_social"/>
+          <Argument type="int" name="no_deduas"/>
+          <Argument type="String" name="vivienda"/>
+          <Argument type="String" name="celular"/>
+          <Argument type="String" name="gusto_de_equipo"/>
+          <Argument type="String" name="mascota"/>
+          <Argument type="long" name="herencia_monetaria"/>
+          <Argument type="String" name="vehiculo"/>
+          <Argument type="String" name="accesorio"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Papa" package="herencia" visibility="public" xPosition="-16.0" yPosition="339.0">
+      <Fields>
+        <Field name="vivienda" type="String" visibility="package"/>
+        <Field name="celular" type="String" visibility="package"/>
+        <Field name="gusto_de_equipo" type="String" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="vivienda"/>
+          <Argument type="String" name="celular"/>
+          <Argument type="String" name="gusto_de_equipo"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="vivienda"/>
+          <Argument type="String" name="celular"/>
+          <Argument type="String" name="gusto_de_equipo"/>
+          <Argument type="String" name="mascota"/>
+          <Argument type="long" name="herencia_monetaria"/>
+          <Argument type="String" name="vehiculo"/>
+          <Argument type="String" name="accesorio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="obtenerDatosPapa" returnType="String" visibility="package"/>
+        <Method name="obtenerDatos" returnType="String" visibility="package"/>
+      </Methods>
+    </Class>
+    <Class name="Persona" package="herencia" visibility="public" xPosition="1262.0" yPosition="39.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="package"/>
+        <Field name="rh" type="String" visibility="package"/>
+        <Field name="cedula" type="long" visibility="package"/>
+        <Field name="sexo" type="char" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="rh"/>
+          <Argument type="long" name="cedula"/>
+          <Argument type="char" name="sexo"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Principal" package="herencia" visibility="public" xPosition="951.0" yPosition="54.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Profesor" package="herencia" visibility="public" xPosition="1883.0" yPosition="54.0">
+      <Fields>
+        <Field name="area_de_estudio" type="String" visibility="package"/>
+        <Field name="salario" type="long" visibility="package"/>
+        <Field name="coordinacion" type="String" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="area_de_estudio"/>
+          <Argument type="long" name="salario"/>
+          <Argument type="String" name="coordinacion"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="area_de_estudio"/>
+          <Argument type="long" name="salario"/>
+          <Argument type="String" name="coordinacion"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="rh"/>
+          <Argument type="long" name="cedula"/>
+          <Argument type="char" name="sexo"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="herencia.Hijo" target="herencia.Papa"/>
+    <IsRelation name="is" source="herencia.Profesor" target="herencia.Persona"/>
+    <IsRelation name="is" source="herencia.Papa" target="herencia.Abuelo"/>
+    <IsRelation name="is" source="herencia.Estudiante" target="herencia.Persona"/>
+    <IsRelation name="is" source="herencia.Administrativo" target="herencia.Persona"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
