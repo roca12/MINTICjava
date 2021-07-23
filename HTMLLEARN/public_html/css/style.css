@@ -1,0 +1,56 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 29/06/2021, 12:29:10 p. m.
+    Author     : diego
+*/
+
+/*
+rem relativo al navegador
+em relativo al elemento padre*/
+
+
+/* Dispositivos pequeños - landscapes telefonos*/
+@media(min-width:576px){
+    body{
+        background: white;
+    }
+}
+
+/* Dispositivos medianos - tablets*/
+@media(min-width:768px){
+    body{
+        background: white;
+    }
+}
+
+
+/* Dispositivos grandes - pc,portatiles*/
+@media(min-width:992px){
+    body{
+        background: white;
+    }
+}
+
+/* Dispositivos extragrandes - pc gran resolución*/
+@media(min-width:1200px){
+    body{
+        background: white;
+    }
+}
+
+/* Dispositivos extrapequeños*/
+@media(max-width:575px){
+    body{
+        background: white;
+    }
+}
+
+.btn-success{
+    color: whitesmoke;
+    font-weight: bolder;
+}
+

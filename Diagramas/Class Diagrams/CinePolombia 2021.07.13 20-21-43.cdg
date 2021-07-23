@@ -37,7 +37,7 @@
       </Constructors>
       <Methods/>
     </Class>
-    <Class name="Vista" package="CinePolombia" visibility="public" xPosition="865.0" yPosition="88.0">
+    <Class name="Vista" package="CinePolombia" visibility="public" xPosition="713.0" yPosition="66.0">
       <Fields/>
       <Constructors/>
       <Methods>
@@ -49,5 +49,6 @@
   </ClassDiagramComponents>
   <ClassDiagramRelations>
     <HasRelation name="en_estreno" source="CinePolombia.Controlador" target="CinePolombia.Pelicula" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Pelicula&gt;"/>
+    <HasRelation name="micontrolador" source="CinePolombia.Vista" target="CinePolombia.Controlador" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
   </ClassDiagramRelations>
 </ClassDiagram>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+  <!-- Define Persistence Unit -->
+  <persistence-unit name="my_persistence_unit">
+    <class>com.roca12.learn.mintic.webservicesmintic.entities.Visitaspormesanio</class>
+    <class>com.roca12.learn.mintic.webservicesmintic.entities.Lenguajes</class>
+    <class>com.roca12.learn.mintic.webservicesmintic.entities.Ciudades</class>
+    <class>com.roca12.learn.mintic.webservicesmintic.entities.Paises</class>
+    <class>com.roca12.learn.mintic.webservicesmintic.entities.Rangos</class>
+    <class>com.roca12.learn.mintic.webservicesmintic.entities.Uvaurltoid</class>
+    <class>com.roca12.learn.mintic.webservicesmintic.entities.AuditoriaAcceso</class>
+    <class>com.roca12.learn.mintic.webservicesmintic.entities.Usuarios</class>
+    <class>com.roca12.learn.mintic.webservicesmintic.entities.Juecesonline</class>
+    <class>com.roca12.learn.mintic.webservicesmintic.entities.Temario</class>
+    <class>com.roca12.learn.mintic.webservicesmintic.entities.Universidades</class>
+    <class>com.roca12.learn.mintic.webservicesmintic.entities.Ejercicios</class>
+  </persistence-unit>
+</persistence>
