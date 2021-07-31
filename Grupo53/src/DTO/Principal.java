@@ -29,7 +29,7 @@ public class Principal {
         }
 
         //eliminar
-        if (bo.eliminarPais(0)) {
+        if (bo.eliminarPais("Colombia")) {
             System.out.println("dato eliminado con exito");
         } else {
             System.out.println("error al eliminar el dato");
