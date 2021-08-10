@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -118,5 +119,16 @@ public class Principal {
         Comidas c2 = leer();
         System.out.println(c2.getNombre_persona());
         cerrar2();
+    }
+    
+    
+      static void escribirArrayList(ArrayList<Comidas> lista) {
+        if (escritor != null) {
+            try {
+                escritor.writeObject(lista);
+            } catch (IOException ex) {
+                System.out.println("Error al escribir el archivo");
+            }
+        }
     }
 }
