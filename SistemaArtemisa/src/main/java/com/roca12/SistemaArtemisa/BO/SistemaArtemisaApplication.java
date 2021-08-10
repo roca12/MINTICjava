@@ -1,4 +1,4 @@
-package com.roca12.SistemaArtemisa;
+package com.roca12.SistemaArtemisa.BO;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

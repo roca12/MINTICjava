@@ -1,4 +1,4 @@
-package com.roca12.SistemaArtemisa;
+package com.roca12.SistemaArtemisa.BO;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
