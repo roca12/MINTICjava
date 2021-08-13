@@ -10,7 +10,7 @@ public class ControladorBD {
 
     public ControladorBD() {
         try {
-            //cargando la libreria
+            //cargando la libreriaa
             Class.forName("org.sqlite.JDBC");
         } catch (ClassNotFoundException ex) {
             System.out.println("Error al cargar la libreria");
