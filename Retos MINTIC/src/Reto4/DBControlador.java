@@ -143,8 +143,8 @@ public class DBControlador {
                         tablaresultados.getString(8)
                 );
             }
-        } catch (SQLException ex) {
-            System.out.println("Error al consultar solitario" + ex.getMessage());
+        } catch (SQLException el_error) {
+            System.out.println("Error al consultar solitario" + el_error.getMessage());
         }        
         return temporal;
     }

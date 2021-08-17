@@ -1,8 +1,5 @@
 package Reto5;
 
-
-
-
 import Reto4.*;
 import java.sql.*;
 import java.util.ArrayList;
@@ -21,9 +18,8 @@ public class DBControlador {
         } catch (SQLException ex) {
             System.out.println("Error en la conexion " + ex.getMessage());
         }
-        
-    }
 
+    }
 
     ///////////////////////////////////////////////////
     void insertar(String nombres, String apellidos,
@@ -55,7 +51,7 @@ public class DBControlador {
             tablaresultados.close();
         } catch (SQLException ex) {
             System.out.println("Error al cerrar conexion" + ex.getMessage());
-        } 
+        }
 
     }
 
@@ -63,6 +59,7 @@ public class DBControlador {
     ArrayList<EstudianteVO> consultar_todo() {
         ArrayList<EstudianteVO> lista_temporal = new ArrayList<>();
         try {
+            sentencia = conexion.createStatement();
             tablaresultados = sentencia.executeQuery("select * from estudiantes;");
             while (tablaresultados.next()) {
                 lista_temporal.add(new EstudianteVO(
@@ -78,15 +75,14 @@ public class DBControlador {
             }
         } catch (SQLException ex) {
             System.out.println("Error al consultar " + ex.getMessage());
-        } 
+        }
         return lista_temporal;
     }
 
     ///////////////////////////////////////////////
     void modificar(String nemail_inst, String nemail, long ncelular, long nfijo, String nprograma) {
         try {
-            sentencia.execute("UPDATE estudiantes SET correo_per = '"+nemail+"',tel_cel = '"+ncelular+"',tel_fijo = '"+nfijo+"',programa_academico = '"+nprograma+"' WHERE correo_ins = '"+nemail_inst+"'");
-            
+            sentencia.execute("UPDATE estudiantes SET correo_per = '" + nemail + "',tel_cel = '" + ncelular + "',tel_fijo = '" + nfijo + "',programa_academico = '" + nprograma + "' WHERE correo_ins = '" + nemail_inst + "'");
 
         } catch (SQLException ex) {
             System.out.println("Error al actualizar dato " + ex.getMessage());
@@ -122,7 +118,7 @@ public class DBControlador {
             }
         } catch (SQLException ex) {
             System.out.println("Error al consultar solitario" + ex.getMessage());
-        } 
+        }
         return temporal;
     }
 

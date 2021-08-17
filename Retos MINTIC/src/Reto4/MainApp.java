@@ -10,6 +10,7 @@ public class MainApp {
         DBControlador bd = new DBControlador();
         while (true) {
             bd.conectar();
+            bd.crear();
             System.out.println(
                     "INSTITUTO LA FLORESTA\n"
                     + "Seleccione tarea a realizar:\n"
