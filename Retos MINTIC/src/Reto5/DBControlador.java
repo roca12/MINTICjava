@@ -1,6 +1,5 @@
 package Reto5;
 
-import Reto4.*;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -19,6 +18,24 @@ public class DBControlador {
             System.out.println("Error en la conexion " + ex.getMessage());
         }
 
+    }
+     /////////////////////////////////////////////////
+    void crear() {
+        try {
+            sentencia = conexion.createStatement();
+            sentencia.execute("CREATE TABLE IF NOT EXISTS estudiantes(\n"
+                    + "nombres TEXT NOT NULL,\n"
+                    + "apellidos  TEXT NOT NULL,\n"
+                    + "fecha_nacimiento  TEXT NOT NULL,\n"
+                    + "correo_ins  TEXT NOT NULL,\n"
+                    + "correo_per  TEXT NOT NULL,\n"
+                    + "tel_cel INTEGER NOT NULL,\n"
+                    + "tel_fijo INTEGER NOT NULL,\n"
+                    + "programa_academico TEXT NOT NULL);\n"
+                    + "");
+        } catch (SQLException ex) {
+            System.out.println("Error al crear la tabla "+ex.getMessage());
+        }
     }
 
     ///////////////////////////////////////////////////

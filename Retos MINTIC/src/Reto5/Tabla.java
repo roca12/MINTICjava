@@ -6,11 +6,14 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.WindowConstants;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
 public class Tabla  {
+    public static void main(String[] args) {
+        Tabla t = new Tabla();
+        t.crear();
+    }
 
     public void crear(){
         //instancia de controlador

@@ -1,16 +1,22 @@
 package Reto5;
 
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JSeparator;
 import javax.swing.JTextField;
 
 
 
 public class Buscar {
+    public static void main(String[] args) {
+        Buscar b = new Buscar();
+        b.crear();
+    }
 
     public void crear() {
         JFrame ventana = new JFrame("Busqueda");  
@@ -57,6 +63,34 @@ public class Buscar {
         
         JButton button = new JButton();  
         button.setText("Buscar");  
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                DBControlador db = new DBControlador();
+                try {
+                    db.conectar();
+                    db.sentencia=db.conexion.createStatement();
+                    EstudianteVO encontrado = db.buscarEstudiante(busqueda.getText());
+                    System.out.println(encontrado.getNombre());
+                    nombre.setText(encontrado.getNombre());
+                    apellido.setText(encontrado.getApellido());
+                    nacimiento.setText(encontrado.getBirthday());
+                    correoins.setText(encontrado.getEmail_inst());
+                    correoper.setText(encontrado.getEmail());
+                    celular.setText(encontrado.getCelular()+"");
+                    fijo.setText(encontrado.getFijo()+"");
+                    programa.setText(encontrado.getPrograma());
+                    db.conexion.close();
+                    db.sentencia.close();
+                    db.tablaresultados.close();
+                } catch (SQLException ex) {
+                    System.out.println(ex.getMessage());
+                } catch (NullPointerException ex){
+                    System.out.println(ex.getMessage());
+                }
+            }
+        });
         
         panel.add(labelbusqueda);  
         panel.add(busqueda);   
