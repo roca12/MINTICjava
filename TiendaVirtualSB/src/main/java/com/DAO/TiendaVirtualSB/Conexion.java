@@ -10,9 +10,9 @@ import java.sql.*;
 public class Conexion {
 	/** Parametros de conexion */
 	static String bd = "tiendavirtual";
-	static String login = "roca";
-	static String password = "raspi";
-	static String url = "jdbc:mysql://192.168.0.47/" + bd;
+	static String login = "admin";
+	static String password = "Piroloco2112";
+	static String url = "jdbc:mariadb://tiendagenerica12.c47knbsonjdi.us-east-2.rds.amazonaws.com/" + bd;
 
 	Connection connection = null;
 
@@ -20,7 +20,7 @@ public class Conexion {
 	public Conexion() {
 		try {
 			// obtenemos el driver de para mysql
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName("org.mariadb.jdbc.Driver");
 			// obtenemos la conexión
 			connection = DriverManager.getConnection(url, login, password);
 

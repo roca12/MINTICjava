@@ -55,6 +55,7 @@ public class Insertar {
                 DBControlador db = new DBControlador();
                 try {
                     db.conectar();
+                    db.crear();
                     db.insertar(
                             nombre.getText(),
                             apellido.getText(),
@@ -68,7 +69,8 @@ public class Insertar {
                     db.conexion.close();
                     db.sentencia.close();
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage(), "error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, 
+                            "Error: " + ex.getMessage(), "error", JOptionPane.ERROR_MESSAGE);
                 }
 
             }
