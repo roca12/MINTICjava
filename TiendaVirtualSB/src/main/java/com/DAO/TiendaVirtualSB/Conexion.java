@@ -8,6 +8,7 @@ import java.sql.*;
  *
  */
 public class Conexion {
+	
 	/** Parametros de conexion */
 	static String bd = "tiendavirtual";
 	static String login = "admin";
@@ -15,7 +16,6 @@ public class Conexion {
 	static String url = "jdbc:mariadb://tiendagenerica12.c47knbsonjdi.us-east-2.rds.amazonaws.com/" + bd;
 
 	Connection connection = null;
-
 	/** Constructor de DbConnection */
 	public Conexion() {
 		try {
