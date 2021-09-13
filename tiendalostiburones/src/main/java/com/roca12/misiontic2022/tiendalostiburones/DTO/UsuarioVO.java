@@ -4,9 +4,8 @@ import java.io.Serializable;
 
 //todas las clases entidad deben ser serializables, y deben estar encapsuladas
 public class UsuarioVO implements Serializable {
-	/**
-	 * 
-	 */
+
+	//identificador unico de las clases entidad
 	private static final long serialVersionUID = 1L;
 	
 	private Integer cedula_usuario;

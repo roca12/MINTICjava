@@ -12,8 +12,9 @@ CREATE TABLE usuarios (
     usuario VARCHAR(255) NOT NULL
 ); 
 
-INSERT INTO usuarios VALUES(001,'roca230313@gmail.com','Diego Rodriguez','admininicial','admin123456');
-INSERT INTO usuarios VALUES(002,'roca230313@gmail.com','Diego Rodriguez','user','pass');
+INSERT INTO usuarios VALUES(001,'roca230313@gmail.com','Diego Rodriguez','admin123456','admininicial');
+INSERT INTO usuarios VALUES(002,'roca230313@gmail.com','Diego Rodriguez','pass','user');
+INSERT INTO usuarios VALUES(003,'roca230313@gmail.com','Diego Rodriguez','pass2','user2');
 
 DROP TABLE usuarios;
 
