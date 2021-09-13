@@ -1,0 +1,147 @@
+package com.roca12.misiontic2022.tiendalostiburones.DAO;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+import com.roca12.misiontic2022.tiendalostiburones.DTO.UsuarioVO;
+
+/**
+ * Clase que permite el acceso a la base de datos
+ *
+ */
+public class UsuarioDAO {
+
+	/**
+	 * Permite registrar un Usuario nuevo
+	 * 
+	 * @param user
+	 */
+
+	public void registrarUsuario(UsuarioVO user) {
+		Conexion conex = new Conexion();
+		
+		try {
+			Statement estatuto = conex.getConnection().createStatement();
+			
+			String sentencia="INSERT INTO usuarios VALUES"
+					+ "("+user.getCedula_usuario()+","
+					+ "'"+user.getEmail_usuario()+"',"
+					+ "'"+user.getNombre_usuario()+"',"
+					+ "'"+user.getPassword()+"',"
+					+ "'"+user.getUsuario()+"'"
+					+ ");";
+			
+			estatuto.executeUpdate(sentencia);
+			System.out.println("Registrado "+sentencia);
+			estatuto.close();
+			conex.desconectar();
+
+		} catch (SQLException e) {
+			System.out.println("------------------- ERROR --------------");
+			System.out.println("No se pudo insertar el usuario");
+			System.out.println(e.getMessage());
+			System.out.println(e.getErrorCode());
+		}
+	}
+
+	/**
+	 * permite consultar el Usuario asociado al user enviado como parametro
+	 * 
+	 * @param documento
+	 * @return
+	 */
+	public ArrayList<UsuarioVO> consultarUsuario(String usuario) {
+		
+		ArrayList<UsuarioVO> listausuarios= new ArrayList<UsuarioVO>();
+		
+		Conexion conex = new Conexion(); 
+
+		try {
+			
+			PreparedStatement consulta = conex.getConnection()
+					.prepareStatement("SELECT * FROM usuarios where usuario = ? ");
+			consulta.setString(1, usuario);
+			
+			ResultSet res = consulta.executeQuery();
+
+			if (res.next()) {
+				UsuarioVO Usuario = new UsuarioVO();
+				Usuario.setCedula_usuario(Integer.parseInt(res.getString("cedula_usuario")));
+				Usuario.setEmail_usuario(res.getString("email_usuario"));
+				Usuario.setNombre_usuario(res.getString("nombre_usuario"));
+				Usuario.setPassword(res.getString("password"));
+				Usuario.setUsuario(res.getString("usuario"));
+				
+
+				listausuarios.add(Usuario);
+			}
+			
+			res.close();
+			consulta.close();
+			conex.desconectar();
+
+		} catch (SQLException e) {
+			System.out.println("------------------- ERROR --------------");
+			System.out.println("No se pudo consultar el usuario");
+			System.out.println(e.getMessage());
+			System.out.println(e.getErrorCode());
+		}catch (Exception e) {
+			System.out.println("------------------- ERROR --------------");
+			System.out.println("No se pudo consultar el usuario");
+			System.out.println(e.getMessage());
+			System.out.println(e.getLocalizedMessage());
+		}
+		return listausuarios;
+	}
+
+	/**
+	 * permite consultar la lista de todos los usuarios
+	 * 
+	 * @return 
+	 */
+	public ArrayList<UsuarioVO> listaDeUsuarios() {
+		
+		ArrayList<UsuarioVO> listausuarios = new ArrayList<UsuarioVO>();
+		
+		Conexion conex = new Conexion();
+
+		try {
+			
+			PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT * FROM usuarios");
+			
+			ResultSet res = consulta.executeQuery();
+			
+			while (res.next()) {
+				UsuarioVO Usuario = new UsuarioVO();
+				Usuario.setCedula_usuario(Integer.parseInt(res.getString("cedula_usuario")));
+				Usuario.setEmail_usuario(res.getString("email_usuario"));
+				Usuario.setNombre_usuario(res.getString("nombre_usuario"));
+				Usuario.setPassword(res.getString("password"));
+				Usuario.setUsuario(res.getString("usuario"));
+
+				listausuarios.add(Usuario);
+			}
+			
+			res.close();
+			consulta.close();
+			conex.desconectar();
+
+		}catch (SQLException e) {
+			System.out.println("------------------- ERROR --------------");
+			System.out.println("No se pudo consultar todos los usuarios");
+			System.out.println(e.getMessage());
+			System.out.println(e.getErrorCode());
+		}catch (Exception e) {
+			System.out.println("------------------- ERROR --------------");
+			System.out.println("No se pudo consultar todos los usuarios");
+			System.out.println(e.getMessage());
+			System.out.println(e.getLocalizedMessage());
+		}
+		
+		return listausuarios;
+	}
+
+}

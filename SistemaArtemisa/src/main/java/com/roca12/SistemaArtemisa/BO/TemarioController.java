@@ -1,12 +1,9 @@
 package com.roca12.SistemaArtemisa.BO;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import org.springframework.boot.json.GsonJsonParser;
-import org.springframework.boot.json.JsonParser;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.roca12.SistemaArtemisa.DAO.*;
 import com.roca12.SistemaArtemisa.DTO.TemarioVO;
 
