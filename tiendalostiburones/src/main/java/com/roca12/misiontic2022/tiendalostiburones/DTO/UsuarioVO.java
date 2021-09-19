@@ -13,13 +13,17 @@ public class UsuarioVO implements Serializable {
 	private String nombre_usuario;
 	private String password;
 	private String usuario;
+	
+	
 	/**
+	 * Metodo que permite ver el valor de la cedula
 	 * @return the cedula_usuario
 	 */
 	public Integer getCedula_usuario() {
 		return cedula_usuario;
 	}
 	/**
+	 * Metodo que permite el cambio de la cedula
 	 * @param cedula_usuario the cedula_usuario to set
 	 */
 	public void setCedula_usuario(Integer cedula_usuario) {

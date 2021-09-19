@@ -39,6 +39,7 @@ public class UsuarioController {
 		UsuarioDAO Dao = new UsuarioDAO();
 		return Dao.listaDeUsuarios();
 	}
+	
 	@DeleteMapping("/eliminarusuario")
 	public void eliminarUsuario(Integer cedula_usuario) {
 		UsuarioDAO Dao = new UsuarioDAO();

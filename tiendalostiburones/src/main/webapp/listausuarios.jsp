@@ -56,7 +56,10 @@
 		loadusuarios();
 	}
 </script>
+
 </head>
+
+
 <body>
 	<!-- Navbar-->
 	<nav class="navbar navbar-dark bg-dark">
@@ -66,14 +69,56 @@
 		</div>
 	</nav>
 
-
-	<div class="container">
-		<div class="row">
-			<div class="col align-self-center" id="usuariosinfo"></div>
+	<!-- Navbar modulos-->
+	<nav class="navbar navbar-dark bg-primary">
+		<div class="container">
+			<a class="navbar-brand links" href="listausuarios.jsp">
+			<i class="fas fa-users"></i> Usuarios</a> 
+			<a class="navbar-brand links" href="listausuarios.jsp">
+			<i class="fas fa-address-book"></i> Clientes</a>
+			<a class="navbar-brand links" href="listausuarios.jsp">
+			<i class="fas fa-truck"></i> Proveedores</a>
+			<a class="navbar-brand links" href="listausuarios.jsp">
+			<i class="fas fa-apple-alt"></i> Productos</a>
+			<a class="navbar-brand links" href="listausuarios.jsp">
+			<i class="fas fa-money-check-alt"></i> Ventas</a>
+			<a class="navbar-brand links" href="listausuarios.jsp">
+			<i class="fas fa-clipboard-list"></i> Reportes</a>
 		</div>
-	</div>
+	</nav>
 	
-
+	
+	<!-- contenido  -->
+	
+	<div style="padding-left: 5px;">
+	
+		<h1><i class="fas fa-list-ol"></i> Tabla de usuarios</h1>
+			<div class="container">
+				<div class="row">
+					<!--  Aqui es donde se autogenera la tabla basado en el script -->
+					<div class="col align-self-center" id="usuariosinfo">
+					
+					</div>
+	
+				</div>
+			</div>
+	
+		<h1><i class="fas fa-cogs"></i> Operaciones</h1>
+			<div class="container">
+				<div class="row">
+					<button type="button" class="btn btn-success" onclick="window.location.href='/insertarusuario.jsp'">
+					<i class="fas fa-plus-circle"></i> Agregar usuario</button>
+					<button type="button" class="btn btn-danger">
+					<i class="fas fa-trash"></i> Eliminar usuario</button>
+					<button type="button" class="btn btn-warning">
+					<i class="fas fa-pen-alt"></i> Actualizar usuario</button>
+					<button type="button" class="btn btn-primary">
+					<i class="fas fa-search"></i> Buscar un usuario</button>
+					<button type="button" class="btn btn-primary">
+					<i class="fas fa-search"></i> Listar todos los usuarios</button>
+				</div>
+			</div>
+	</div>
 
 
 	<nav class="navbar fixed-bottom navbar-dark bg-dark">
@@ -82,12 +127,6 @@
 				<a class="navbar-brand links" href="#"><i class="fas fa-code"></i>
 					Diseñado y programado por Diego Rodriguez <i
 					class="fas fa-code-branch"></i></a>
-			</div>
-			<div class="col-4">
-				<a class="navbar-brand links" href="https://github.com/roca12"><i
-					class="fab fa-github-square"></i> Github</a> <a
-					class="navbar-brand links" href=""><i class="fab fa-twitter"></i>
-					Twitter</a>
 			</div>
 		</div>
 	</nav>

@@ -16,6 +16,11 @@ INSERT INTO usuarios VALUES(001,'roca230313@gmail.com','Diego Rodriguez','admin1
 INSERT INTO usuarios VALUES(002,'roca230313@gmail.com','Diego Rodriguez','pass','user');
 INSERT INTO usuarios VALUES(003,'roca230313@gmail.com','Diego Rodriguez','pass2','user2');
 
+CREATE UNIQUE INDEX usuario_unico 
+ON usuarios(usuario);
+
+
+
 DROP TABLE usuarios;
 
 DELETE FROM usuarios 

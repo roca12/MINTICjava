@@ -47,7 +47,8 @@
 			</H1>
 			<div class="input-group mb-3">
 				<span class="input-group-text" id="basic-addon1"><i
-					class="fas fa-user-shield"></i></span> <input id="inputuser" type="text"
+					class="fas fa-user-shield"></i></span> 
+					<input id="inputuser" type="text"
 					class="form-control" placeholder="Username" aria-label="Username"
 					aria-describedby="basic-addon1">
 			</div>
@@ -65,6 +66,7 @@
 				<button type="button" class="btn btn-warning">
 					<i class="fas fa-clipboard-list"></i> Registrarse
 				</button>
+				
 				<div id="error" class="alert alert-danger visually-hidden"
 					role="alert">Usuario o contraseña incorrecta!</div>
 
@@ -79,12 +81,14 @@
 					Diseñado y programado por Diego Rodriguez <i
 					class="fas fa-code-branch"></i></a>
 			</div>
+			<!--  
 			<div class="col-4">
 				<a class="navbar-brand links" href="https://github.com/roca12"><i
 					class="fab fa-github-square"></i> Github</a> <a
 					class="navbar-brand links" href=""><i class="fab fa-twitter"></i>
 					Twitter</a>
 			</div>
+			-->
 		</div>
 	</nav>
 	
@@ -133,7 +137,7 @@
 								//si la clave NO coincide
 								console.log("error clave");
 								var element = document.getElementById("error");
-								element.classList.add("visually-hidden");
+								element.classList.remove("visually-hidden");
 								document.getElementById("inputuser").value = "";
 								document.getElementById("inputpass").value = "";
 								return;
