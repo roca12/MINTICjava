@@ -10,7 +10,7 @@
 <!-- Tamaño de la pantalla -->
 <meta name="viewport" content="width=device-width">
 <!-- titulo de la pestaña -->
-<title>Insertando usuario</title>
+<title>Actualizar usuario</title>
 <!-- bootstrap-->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -62,17 +62,17 @@
 
 	<div style="padding-left: 5px">
 		<h1>
-			<i class="fas fa-plus-circle"></i> Datos del nuevo usuario
+			<i class="fas fa-plus-circle"></i> Datos a actualizar del usuario
 		</h1>
 		<div class="container">
 
 
 			<div id="error" class="alert alert-danger visually-hidden"
-				role="alert">Error al crear el usuario, verifique que no
+				role="alert">Error al actualizar el usuario, verifique que no
 				exista un usuario con la cedula y usuario dados</div>
 
 			<div id="correcto" class="alert alert-success visually-hidden"
-				role="alert">Usuario creado con exito</div>
+				role="alert">Usuario actualizado con exito</div>
 
 			<form id="form1">
 				<div class="input-group mb-3">
@@ -112,7 +112,7 @@
 			</form>
 
 			<button type="button" class="btn btn-success" onclick="enviar()">
-				<i class="fas fa-check"></i> Insertar nuevo usuario
+				<i class="fas fa-check"></i> Actualizar usuario
 			</button>
 
 			<h1>
