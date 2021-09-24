@@ -62,14 +62,13 @@
 
 	<div style="padding-left: 5px">
 		<h1>
-			<i class="fas fa-plus-circle"></i> Datos a actualizar del usuario
+			<i class="fas fa-sync"></i> Datos a actualizar del usuario
 		</h1>
 		<div class="container">
 
 
 			<div id="error" class="alert alert-danger visually-hidden"
-				role="alert">Error al actualizar el usuario, verifique que no
-				exista un usuario con la cedula y usuario dados</div>
+				role="alert">Error al actualizar el usuario, verifique que la cedula y usuario dados sean validos</div>
 
 			<div id="correcto" class="alert alert-success visually-hidden"
 				role="alert">Usuario actualizado con exito</div>
@@ -111,8 +110,8 @@
 				</div>
 			</form>
 
-			<button type="button" class="btn btn-success" onclick="enviar()">
-				<i class="fas fa-check"></i> Actualizar usuario
+			<button type="button" class="btn btn-warning" onclick="actualizar()">
+				<i class="fas fa-edit"></i> Actualizar usuario
 			</button>
 
 			<h1>
@@ -155,7 +154,7 @@
 		</div>
 	</nav>
 	<script>
-		function enviar() {
+		function actualizar() {
 			var x = document.getElementById("user").value;
 			var y = document.getElementById("cedula_usuario").value;
 			var req = new XMLHttpRequest();
@@ -184,7 +183,7 @@
 			}
 			console.log(coincidencia);
 
-			if (coincidencia == false) {
+			if (coincidencia != false) {
 				var formData = new FormData();
 				formData.append("cedula_usuario", document
 						.getElementById("cedula_usuario").value);
@@ -197,7 +196,7 @@
 				formData.append("usuario",
 						document.getElementById("user").value);
 				var xhr = new XMLHttpRequest();
-				xhr.open("POST", "http://localhost:8080/registrarusuario");
+				xhr.open("PUT", "http://localhost:8080/actualizarusuarios");
 
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");

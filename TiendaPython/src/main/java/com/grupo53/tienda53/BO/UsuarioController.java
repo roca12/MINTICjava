@@ -1,4 +1,4 @@
-package com.roca12.misiontic2022.tiendalostiburones.BO;
+package com.grupo53.tienda53.BO;
 
 import java.util.ArrayList;
 
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.roca12.misiontic2022.tiendalostiburones.DAO.UsuarioDAO;
-import com.roca12.misiontic2022.tiendalostiburones.DTO.UsuarioVO;
+import com.grupo53.tienda53.DAO.*;
+import com.grupo53.tienda53.DTO.*;
 
 
 @RestController
@@ -39,7 +39,6 @@ public class UsuarioController {
 		UsuarioDAO Dao = new UsuarioDAO();
 		return Dao.listaDeUsuarios();
 	}
-	
 	@DeleteMapping("/eliminarusuario")
 	public void eliminarUsuario(Integer cedula_usuario) {
 		UsuarioDAO Dao = new UsuarioDAO();
@@ -49,7 +48,7 @@ public class UsuarioController {
 	@PutMapping("/actualizarusuarios")
 	public void actualizarUsuario(UsuarioVO user) {
 		UsuarioDAO Dao = new UsuarioDAO();
-		Dao.actualizarUsuario(user);
+		Dao.registrarUsuario(user);
 	}
 	
 	
