@@ -41,6 +41,10 @@ CREATE TABLE proveedores (
 );
 
 INSERT INTO proveedores VALUES(001,'Bogota','KR 7 CLL 45','Colanta','+57300000000');
+INSERT INTO proveedores VALUES(002,'Bogota','KR 7 CLL 45','Colanta','+57300000000');
+INSERT INTO proveedores VALUES(003,'Bogota','KR 7 CLL 45','Colanta','+57300000000');
+INSERT INTO proveedores VALUES(004,'Bogota','KR 7 CLL 45','Colanta','+57300000000');
+INSERT INTO proveedores VALUES(005,'Bogota','KR 7 CLL 45','Colanta','+57300000000');
 
 ######## modulo de productos ########
 CREATE TABLE productos (

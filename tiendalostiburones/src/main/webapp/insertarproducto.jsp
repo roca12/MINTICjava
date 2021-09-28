@@ -24,9 +24,9 @@
 	integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
 	crossorigin="anonymous">
 
-<!-- Cargando mi hoja de estilo -->
+<!-- Cargando mi hoja de estilo 
 <link href="style.css" rel="stylesheet" type="text/css" />
-
+-->
 
 
 </head>
@@ -62,17 +62,16 @@
 
 	<div style="padding-left: 5px">
 		<h1>
-			<i class="fas fa-plus-circle"></i> Datos del nuevo usuario
+			<i class="fas fa-plus-circle"></i> Insertando archivo de productos
 		</h1>
 		<div class="container">
 
 
 			<div id="error" class="alert alert-danger visually-hidden"
-				role="alert">Error al crear el usuario, verifique que no
-				exista un usuario con la cedula y usuario dados</div>
+				role="alert">Archivo vacio, extensión no valida o datos corruptos (El separador debe ser coma ",")</div>
 
 			<div id="correcto" class="alert alert-success visually-hidden"
-				role="alert">Usuario creado con exito</div>
+				role="alert">Productos importados desde CSV con exito</div>
 
 			<form id="form1">
 				<div>
@@ -100,31 +99,68 @@
 	</nav>
 	<script>
 		function subirArchivo() {
-			const csvFile = document.getElementById("archivo");
 
-			const input = csvFile.files[0];
-			const reader = new FileReader();
+			try {
 
-			reader.onload = function(e) {
+				var csvFile = document.getElementById("archivo");
 
-				const text = e.target.result;
+				var input = csvFile.files[0];
+				var reader = new FileReader();
 
-				var arrayLineas = text.split("\n");
+				reader.onload = function(e) {
 
-				for (var i = 0; i < arrayLineas.length; i += 1) {
-					var arraydatos = arrayLineas[i].split(",");
+					var text = e.target.result;
 
-					if (arrayLineas[i] == "") {
-						continue;
+					var arrayLineas = text.split("\n");
+
+					var xhr = new XMLHttpRequest();
+					xhr.open("DELETE",
+							"http://localhost:8080/eliminartodoproducto");
+					xhr.send();
+
+					for (var i = 0; i < arrayLineas.length; i += 1) {
+						var arraydatos = arrayLineas[i].split(",");
+
+						if (arrayLineas[i] == "") {
+							continue;
+						}
+
+						for (var j = 0; j < arraydatos.length; j += 1) {
+							console.log(i + " " + j + "->" + arraydatos[j]);
+						}
+
+						var formData = new FormData();
+						formData.append("codigo_producto", arraydatos[0]);
+						formData.append("nombre_producto", arraydatos[1]);
+						formData.append("nit_proveedor", arraydatos[2]);
+						formData.append("precio_compra", arraydatos[3]);
+						formData.append("iva_compra", arraydatos[4]);
+						formData.append("precio_venta", arraydatos[5]);
+						var xhr = new XMLHttpRequest();
+						xhr.open("POST",
+								"http://localhost:8080/registrarproducto");
+
+						xhr.send(formData);
 					}
 
-					for (var j = 0; j < arraydatos.length; j += 1) {
-						console.log(i + " " + j + "->" + arraydatos[j]);
-					}
-				}
-			};
+					var element = document.getElementById("error");
+					element.classList.add("visually-hidden");
+					var element2 = document.getElementById("correcto");
+					element2.classList.remove("visually-hidden");
 
-			reader.readAsText(input);
+					document.getElementById("archivo").value = "";
+
+				};
+
+				reader.readAsText(input);
+			} catch (error) {
+				var element = document.getElementById("error");
+				element.classList.remove("visually-hidden");
+				var element2 = document.getElementById("correcto");
+				element2.classList.add("visually-hidden");
+
+				document.getElementById("archivo").value = "";
+			}
 		}
 	</script>
 
