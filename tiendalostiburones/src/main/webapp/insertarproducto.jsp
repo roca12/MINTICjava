@@ -115,7 +115,7 @@
 
 					var xhr = new XMLHttpRequest();
 					xhr.open("DELETE",
-							"http://localhost:8080/eliminartodoproducto");
+							"http://localhost:8080/eliminartodoproducto",true);
 					xhr.send();
 
 					for (var i = 0; i < arrayLineas.length; i += 1) {
