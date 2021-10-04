@@ -76,9 +76,9 @@
 			<form id="form1">
 				<div>
 					<label for="formFileLg" class="form-label">Seleccionar
-						archivo CSV con el inventario de productos</label> <input
-						class="form-control form-control-lg" id="archivo" type="file"
-						accept=".csv">
+						archivo CSV con el inventario de productos</label> 
+					<input class="form-control form-control-lg" id="archivo" type="file"
+						accept=".csv" >
 					<button type="button" class="btn btn-success"
 						onclick="subirArchivo()">Subir archivo</button>
 				</div>
@@ -114,8 +114,7 @@
 					var arrayLineas = text.split("\n");
 
 					var xhr = new XMLHttpRequest();
-					xhr.open("DELETE",
-							"http://localhost:8080/eliminartodoproducto",true);
+					xhr.open("DELETE","http://localhost:8080/eliminartodoproducto",true);
 					xhr.send();
 
 					for (var i = 0; i < arrayLineas.length; i += 1) {
