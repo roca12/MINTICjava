@@ -41,7 +41,7 @@
 		</form>
 	</nav>
 
-	<div w3-include-html="/snippets/sidenav.html"></div>
+	<div w3-include-html="snippets/sidenav.html"></div>
 
 	<div id="layoutSidenav_content">
 		<main>
@@ -64,32 +64,32 @@
 									<div class="col-sm-2 col-md-2 me-2">
 
 										<button type="button" class="btn btn-success"
-											onclick="window.location.href='/insertarusuario.jsp'">
+											onclick="window.location.href='<%=request.getContextPath()%>/insertarusuario.jsp'">
 											<i class="fas fa-plus-circle"></i> Agregar usuario
 										</button>
 									</div>
 									<div class="col-sm-2 col-md-2 me-2">
 										<button type="button" class="btn btn-danger"
-											onclick="window.location.href='/eliminarusuario.jsp'">
+											onclick="window.location.href='<%=request.getContextPath()%>/eliminarusuario.jsp'">
 											<i class="fas fa-trash"></i> Eliminar usuario
 										</button>
 									</div>
 									<div class="col-sm-2 col-md-2 me-4">
 										<button type="button" class="btn btn-warning"
-											onclick="window.location.href='/actualizarusuario.jsp'">
+											onclick="window.location.href='<%=request.getContextPath()%>/actualizarusuario.jsp'">
 											<i class="fas fa-pen-alt"></i> Actualizar usuario
 										</button>
 									</div>
 									<div class="col-sm-2 col-md-2 me-2">
 										<button type="button" class="btn btn-primary"
-											onclick="window.location.href='/buscarusuario.jsp'">
+											onclick="window.location.href='<%=request.getContextPath()%>/buscarusuario.jsp'">
 											<i class="fas fa-search"></i> Buscar usuario
 										</button>
 									</div>
 									<div class="col-sm-2 col-md-2 me-2">
 										<button type="button" class="btn btn-primary"
-											onclick="window.location.href='/listausuarios.jsp'">
-											<i class="fas fa-search"></i> Listado completo
+											onclick="window.location.href='<%=request.getContextPath()%>/listausuarios.jsp'">
+											<i class="fas fa-search"></i> Listado completa
 										</button>
 									</div>
 								</div>
@@ -170,7 +170,7 @@
 			</div>
 		</main>
 
-		<div w3-include-html="/snippets/footer.html"></div>
+		<div w3-include-html="snippets/footer.html"></div>
 
 	</div>
 
@@ -192,7 +192,7 @@
 			var y = document.getElementById("cedula_usuario").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', 'http://localhost:8080/listarusuarios', false);
+			req.open('GET', 'http://ec2-3-95-37-63.compute-1.amazonaws.com:8080/tiendalostiburones-0.0.1/listarusuarios', false);
 			req.send(null);
 			var usuarios = null;
 			if (req.status == 200)
@@ -230,7 +230,7 @@
 				formData.append("usuario",
 						document.getElementById("user").value);
 				var xhr = new XMLHttpRequest();
-				xhr.open("POST", "http://localhost:8080/registrarusuario");
+				xhr.open("POST", "http://ec2-3-95-37-63.compute-1.amazonaws.com:8080/tiendalostiburones-0.0.1/registrarusuario");
 
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");
