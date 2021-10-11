@@ -162,11 +162,7 @@
 			var y = document.getElementById("cedula_usuario").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req
-					.open(
-							'GET',
-							'http://ec2-3-95-37-63.compute-1.amazonaws.com:8080/tiendalostiburones-0.0.1/listarusuarios',
-							false);
+			req.open('GET','http://localhost:8080/listarusuarios',false);
 			req.send(null);
 			var usuarios = null;
 			if (req.status == 200)
@@ -188,11 +184,7 @@
 				var cedula = document.getElementById("cedula_usuario").value;
 
 				var xhr = new XMLHttpRequest();
-				xhr
-						.open(
-								"DELETE",
-								"http://ec2-3-95-37-63.compute-1.amazonaws.com:8080/tiendalostiburones-0.0.1/eliminarusuario?cedula_usuario="
-										+ cedula);
+				xhr.open("DELETE","http://localhost:8080/eliminarusuario?cedula_usuario="+ cedula);
 
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");

@@ -33,7 +33,7 @@
 	        });
 	    }
 			var xmlhttp = new XMLHttpRequest();
-			xmlhttp.open("GET", "http://ec2-3-95-37-63.compute-1.amazonaws.com:8080/tiendalostiburones-0.0.1/listarusuarios", true);
+			xmlhttp.open("GET", "http://localhost:8080/listarusuarios", true);
 			xmlhttp.onreadystatechange = function() {
 				if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 

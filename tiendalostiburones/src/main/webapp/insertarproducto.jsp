@@ -133,10 +133,7 @@
 					var arrayLineas = text.split("\n");
 
 					var xhr = new XMLHttpRequest();
-					xhr
-							.open(
-									"DELETE",
-									"http://ec2-3-95-37-63.compute-1.amazonaws.com:8080/tiendalostiburones-0.0.1/eliminartodoproducto",
+					xhr.open("DELETE","http://localhost:8080/eliminartodoproducto",
 									true);
 					xhr.send();
 
@@ -159,10 +156,7 @@
 						formData.append("iva_compra", arraydatos[4]);
 						formData.append("precio_venta", arraydatos[5]);
 						var xhr = new XMLHttpRequest();
-						xhr
-								.open(
-										"POST",
-										"http://ec2-3-95-37-63.compute-1.amazonaws.com:8080/tiendalostiburones-0.0.1/registrarproducto");
+						xhr.open("POST","http://localhost:8080/registrarproducto");
 
 						xhr.send(formData);
 					}

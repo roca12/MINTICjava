@@ -202,11 +202,7 @@
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
 			var user = document.getElementById("usersearch").value;
-			req
-					.open(
-							'GET',
-							'http://ec2-3-95-37-63.compute-1.amazonaws.com:8080/tiendalostiburones-0.0.1/consultarusuario?usuario='
-									+ user, false);
+			req.open('GET','http://localhost:8080/consultarusuario?usuario='+ user, false);
 			req.send(null);
 			var usuario = null;
 			if (req.status == 200)
