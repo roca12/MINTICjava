@@ -8,7 +8,7 @@ const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 
 //trayendo js que maneja el modelo de usuario
-const user = require('./public/user.js');
+const user = require('./models/user.js');
 
 //activando el conversor de cuerpo para los archivos json
 app.use(bodyParser.json());
@@ -34,24 +34,31 @@ mongoose.connect(mongo_uri, function (err) {
 });
 
 //url de api tipo POST que permite registrar un usuario 
-app.post('/register', (req, res) => {
-    const { username, password } = req.body;
-    console.log('Entra a metodo post/register');
+app.route('/register')
+    .get(function (req, res) {
+        res.send('obteniendo');
+    })
+    .post(function (req, res) {
+        const { username, password } = req.body;
+        console.log('Entra a metodo post/register');
+        //creando instancia de usuario    
+        const User = new user({ username, password });
 
-    //creando instancia de usuario    
-    const User = new user({ username, password });
-
-    //guardando en base de datos el usuario, si falla lanza un 500
-    console.log('Declara variable user');
-    User.save(err => {
-        if (err) {
-            res.status(500).send('Error al registrar usuario');
-        }
-        else {
-            res.status(200).send('Usuario Registrado');
-        }
+        //guardando en base de datos el usuario, si falla lanza un 500
+        console.log('Declara variable user');
+        User.save(err => {
+            if (err) {
+                res.redirect(301,"/errors/userregistererror.html");
+                //res.status(500).send('Error al registrar usuario');
+            }
+            else {
+                res.status(200).send('Usuario Registrado');
+            }
+        });
+    })
+    .put(function (req, res) {
+        res.send('Actualiza');
     });
-});
 
 
 //url de api tipo POST que permite confirmar la existencia de un usuario y autenticar
