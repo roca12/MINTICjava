@@ -5,4 +5,4 @@
 5) docker ps -a
 6) buscar id
 7) docker start id
-https://www.youtube.com/watch?v=jlFSuH7XkpI
+s
